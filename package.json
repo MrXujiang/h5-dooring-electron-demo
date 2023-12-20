@@ -1,0 +1,49 @@
+{
+  "name": "electron-dooring",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "main/index.js",
+  "scripts": {
+    "start:main": "cross-env NODE_ENV=development nodemon --watch ./main/ --exec \"electron ./\"",
+    "build:mac": "electron-builder -m --config ./electron-builder.config.js",
+    "build:win": "electron-builder -w --config ./electron-builder.config.js",
+    "build": "electron-builder -w -m --config ./electron-builder.config.js",
+    "build:serve": "babel main/server/src --out-dir main/server/dist",
+    "start:serve": "node main/index.js"
+  },
+  "keywords": [],
+  "author": "xuxiaoxi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
+    "electron": "^25.3.1",
+    "electron-builder": "^24.4.0",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "@koa/multer": "^2.0.2",
+    "@koa/router": "^8.0.8",
+    "cross-env": "^7.0.3",
+    "glob": "^7.1.4",
+    "https": "^1.0.0",
+    "jszip": "^3.5.0",
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.1",
+    "koa-compress": "^5.0.1",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "multer": "^1.4.2",
+    "ramda": "^0.26.1",
+    "socket.io": "^2.3.0",
+    "wechat-api": "^1.35.1"
+  }
+}
